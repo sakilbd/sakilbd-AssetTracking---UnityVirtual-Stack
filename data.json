@@ -1,0 +1,50 @@
+text{
+"Player":
+[
+    {
+        "id":1,
+        "rack_id":22,
+        "product_id":1,
+        "cell_position":"2_2",
+        "status":2,
+        "created_at":null,
+        "updated_at":"2021-01-02 13:05:54",
+        "product_name":"Computer",
+        "destination":"Mirpur",
+        "rf_card_number":"1",
+        "order_id":"1",
+        "cell_id":null,
+        "size":"l"
+    },
+    {
+        "id":3,
+        "rack_id":22,
+        "product_id":3,
+        "cell_position":"3_1",
+        "status":0,
+        "created_at":null,
+        "updated_at":"2020-12-31 18:29:02",
+        "product_name":"Android",
+        "destination":"Dhaka",
+        "rf_card_number":"3",
+        "order_id":"3",
+        "cell_id":null,
+        "size":"s"
+    },
+    {
+        "id":2,
+        "rack_id":22,
+        "product_id":2,
+        "cell_position":"4_4",
+        "status":2,
+        "created_at":null,
+        "updated_at":"2021-01-02 13:06:10",
+        "product_name":"Desktop",
+        "destination":"Fotulla",
+        "rf_card_number":"2",
+        "order_id":"3",
+        "cell_id":null,
+        "size":"l"
+    }
+]
+}

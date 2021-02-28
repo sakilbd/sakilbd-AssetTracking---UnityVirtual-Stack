@@ -1,0 +1,15 @@
+[{
+        "id":2,
+        "rack_id":22,
+        "product_id":2,
+        "cell_position":"4_4",
+        "status":2,
+        "created_at":null,
+        "updated_at":"2021-01-02 13:06:10",
+        "product_name":"Desktop",
+        "destination":"Fotulla",
+        "rf_card_number":"2",
+        "order_id":"3",
+        "cell_id":null,
+        "size":"l"
+   }]
