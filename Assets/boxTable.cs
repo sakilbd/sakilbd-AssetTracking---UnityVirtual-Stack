@@ -45,11 +45,11 @@ public class boxTable : MonoBehaviour
 
         //CreateBox(list1);
 
-        PlayerInfo[] PlayerInfo = JsonHelper.getJsonArray<PlayerInfo>(jsonD);
+        // PlayerInfo[] PlayerInfo = JsonHelper.getJsonArray<PlayerInfo>(jsonD);
         //Debug.Log(PlayerInfo[1].product_name);
 
 
-  CreateBox(jsonD);
+//   CreateBox(jsonD);
     }
 
 
@@ -66,10 +66,11 @@ public class boxTable : MonoBehaviour
 
         for (float p = 0; p <= boxHeight; p++)
         {
-
+                
 
             for (float q = 0; q <= boxWidth; q++)
-            { int count = 1;
+            { 
+                Debug.Log("lets see bro"+p);
                 for (int i = 0; i >= 0; i++)
                 {
                     float height = gapHeight-.3f;
@@ -136,7 +137,7 @@ public class boxTable : MonoBehaviour
                                                     laura = Instantiate(box1, Vec, box.transform.rotation) as GameObject;
                                                     laura.transform.parent = transform;
                                                     laura.transform.localPosition = new Vector3((q + q * 2.3f), -(p + p * gapWidth), 0);
-                                                Debug.Log("boxAA");
+                                                // Debug.Log("boxAA");
                                             break;
                                                 
 
@@ -154,7 +155,7 @@ public class boxTable : MonoBehaviour
                                                 laura = Instantiate(box1, Vec, box.transform.rotation) as GameObject;
                                                 laura.transform.parent = transform;
                                                 laura.transform.localPosition = new Vector3((q + q * gapHeight - .3f), -(p + p * gapWidth), 0);
-                                                Debug.Log("boxBB");
+                                                // Debug.Log("boxBB");
                                             break;
                                            
                                                 
@@ -187,7 +188,7 @@ public class boxTable : MonoBehaviour
                             laura = Instantiate(box, Vec, box.transform.rotation) as GameObject;
                             laura.transform.parent = transform;
                             laura.transform.localPosition = new Vector3((q + q * gapHeight), -(p + p * gapWidth), 0);
-                            //break;
+                            break;
                             //}
                             }
                         }
