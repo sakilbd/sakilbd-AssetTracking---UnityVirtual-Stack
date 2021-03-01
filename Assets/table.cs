@@ -8,11 +8,12 @@
 
      public GameObject block1;
 
-   
+       public GameObject boxes;
     public float worldHeight ;
      public float worldWidth;
      public float gap ;
-
+      public float rackNumber;
+private float count;
 
     //public GameObject box;
     //public float boxHeight;
@@ -28,17 +29,20 @@
     }
 
     void CreateWorld () {
+
+         count=1f;
+         worldHeight = rackNumber/2;
+
          for(float x = 0f; x < worldHeight; x++) {
-          
-
-
             for (float z = 0f; z < worldWidth; z++) {
                 
-
-                GameObject block = Instantiate(block1, Vector3.zero , block1.transform.rotation) as GameObject;
-                 block.transform.parent = transform;
-                 block.transform.localPosition = new Vector3( z + z * gap ,0, x + x * gap);
-                 Debug.Log(block);
+                if(count<=rackNumber){
+                    GameObject block = Instantiate(block1, Vector3.zero , block1.transform.rotation) as GameObject;
+                    block.transform.parent = transform;
+                    block.transform.localPosition = new Vector3( z + z * gap ,0, x + x * gap);
+                    Debug.Log(block);
+                    count++;
+                }
              }
          }
      }
