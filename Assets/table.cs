@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
+ using System;
 [System.Serializable]
  public class table : MonoBehaviour {
 
@@ -18,6 +19,7 @@ using System.IO;
       public float rackNumber;
 private float count;
   private string jsonD;
+  List<string> rName = new List<string>();
     //public GameObject box;
     //public float boxHeight;
     //public float boxWidth;
@@ -27,31 +29,18 @@ private float count;
     void  Start () {
    jsonD = File.ReadAllText(Application.dataPath + "/json/rack.json");
         //CreateBox();
-        CreateWorld(jsonD);
 
-    }
-
-    void CreateWorld (string jsonD) {
- PlayerInfo[] PInfo = JsonHelper.getJsonArray<PlayerInfo>(jsonD);
-
-//  var fib = new List<int>{0,1,2};
-// foreach( object elem in PInfo){
-//  string s = PInfo[elem].rack_name;
-//         Debug.Log(s);
-
-// }
-
-         count=1f;
-         worldHeight = rackNumber/2-1 ;
-
-          for (int i = 0; i >= 0; i++)
+ rName.Add("sakil");
+  for (int i = 0; i >= 0; i++)
           {
             try
                                         {
-                                        
+        PlayerInfo[] PInfo = JsonHelper.getJsonArray<PlayerInfo>(jsonD);                                
         string s = PInfo[i].rack_name;
-        rackNme.text= s;
-        Debug.Log(s);
+        rName.Add(s);
+       
+       
+        // Debug.Log(s);
 
                                         }
  catch (System.Exception excp)
@@ -61,6 +50,29 @@ private float count;
                         break;
                     }
           }
+// Debug.Log(rName);
+ for (int q = 0; q <2;q++){
+
+ 
+ }
+        CreateWorld(jsonD);
+
+    }
+
+    void CreateWorld (string jsonD) {
+ 
+
+//  var fib = new List<int>{0,1,2};
+// foreach( object elem in PInfo){
+//  string s = PInfo[elem].rack_name;
+//         Debug.Log(s);
+
+// }
+
+         count=0f;
+         worldHeight = rackNumber/2-1 ;
+
+        
          for(float x = 0f; x < worldHeight; x++) {
             //    Debug.Log( "firstLoop:"+x);
             for (float z = 0f; z < worldWidth; z++) {
@@ -71,6 +83,10 @@ private float count;
                     block.transform.parent = transform;
                     block.transform.localPosition = new Vector3( z + z * gap ,0, x + x * gap);
 
+
+                    float myFloat = count;
+int myInt = Convert.ToInt32(myFloat);
+                       rackNme.text= rName[myInt];
                     // string s = PInfo[i].rack_name;
         // rackNme.text= s;
         // Debug.Log(s);
@@ -79,7 +95,7 @@ private float count;
                     count++;
                     
                   
-               Debug.Log("Inside IF Condition :" + z);
+              //  Debug.Log("Inside IF Condition :" + z);
     }
                 }
              }
