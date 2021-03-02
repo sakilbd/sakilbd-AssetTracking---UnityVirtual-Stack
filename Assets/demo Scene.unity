@@ -2420,6 +2420,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1474524534}
   - component: {fileID: 1474524535}
+  - component: {fileID: 1474524536}
+  - component: {fileID: 1474524537}
   m_Layer: 0
   m_Name: boxRow1 (1)
   m_TagString: Untagged
@@ -2448,7 +2450,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474524533}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a85110cc7e47038429e8561b5c8eba7a, type: 3}
   m_Name: 
@@ -2463,6 +2465,42 @@ MonoBehaviour:
   rfS: {fileID: 1061213680}
   box: {fileID: 211132183}
   box1: {fileID: 1605649721}
+  boxHeight: 4
+  boxWidth: 4
+  gapHeight: 1.9
+  gapWidth: 0.9
+--- !u!114 &1474524536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474524533}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab552d2f451f7764da3a5253b383f94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block1: {fileID: 211132183}
+  boxes: {fileID: 211132183}
+  worldHeight: 4
+  worldWidth: 4
+  gap: 1.9
+  rackNumber: 4
+--- !u!114 &1474524537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474524533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464bbba39d3089549b9af4024ffa8191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dp: {fileID: 1574641680}
+  box: {fileID: 211132183}
   boxHeight: 4
   boxWidth: 4
   gapHeight: 1.9
@@ -3042,7 +3080,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711335504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a85110cc7e47038429e8561b5c8eba7a, type: 3}
   m_Name: 
@@ -3061,6 +3099,24 @@ MonoBehaviour:
   boxWidth: 4
   gapHeight: 1.9
   gapWidth: 0.9
+--- !u!114 &1711335518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711335504}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab552d2f451f7764da3a5253b383f94f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block1: {fileID: 0}
+  boxes: {fileID: 0}
+  worldHeight: 0
+  worldWidth: 0
+  gap: 0
+  rackNumber: 0
 --- !u!1 &1775869769
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,14 +3844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1759bf19aae91514f9490f92f8ea5095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: 
-  dp: {fileID: 211132183}
-  score: 0
-  box: {fileID: 1711335504}
-  boxHeight: 4
-  boxWidth: 3
-  gapHeight: 3
-  gapWidth: 2
 --- !u!4 &2079437372
 Transform:
   m_ObjectHideFlags: 0

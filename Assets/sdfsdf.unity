@@ -151,9 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block1: {fileID: 529687600}
-  worldHeight: 3
+  boxes: {fileID: 147178275}
   worldWidth: 4
   gap: 3
+  rackNumber: 3
 --- !u!4 &147178277
 Transform:
   m_ObjectHideFlags: 0

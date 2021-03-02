@@ -27,8 +27,8 @@ public class boxTable1 : MonoBehaviour
     {
 
 
-box.transform.localScale += new Vector3(-.2f,0, 0);
-box.transform.localPosition += new Vector3(2,0, 0);
+// box.transform.localScale += new Vector3(-.2f,0, 0);
+// box.transform.localPosition += new Vector3(2,0, 0);
 //dp.transform.localScale += new Vector3(0,0, .1f);
 
 
