@@ -11,7 +11,7 @@ public class boxTable1 : MonoBehaviour
 
 
     private string info;
-    public GameObject dp;
+    // public GameObject dp;
 
 
 
@@ -55,16 +55,16 @@ public class boxTable1 : MonoBehaviour
 
 
                 GameObject laura;
-                Text t = dp.GetComponent<Text>();
+                // Text t = dp.GetComponent<Text>();
 
-                info = "" + p + q;
-                t.text = info;
+                // info = "" + p + q;
+                // t.text = info;
                 Vector3 Vec = new Vector3(1, 0, 0);
 
                 laura = Instantiate(box, Vec, box.transform.rotation) as GameObject;
                 laura.transform.parent = transform;
                 laura.transform.localPosition = new Vector3((q + q * gapHeight), -(p + p * gapWidth), 0);
-
+                Debug.Log("p:"+p+"Q:"+q);
 
 
 

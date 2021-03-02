@@ -11,7 +11,7 @@ using System.IO;
 
      public GameObject block1;
 
-       public GameObject boxes;
+      //  public GameObject boxes;
     private float worldHeight ;
      public float worldWidth;
      public float gap ;
@@ -34,7 +34,7 @@ private float count;
     void CreateWorld (string jsonD) {
 
          count=1f;
-         worldHeight = rackNumber/2 ;
+         worldHeight = rackNumber/2-1 ;
 
          for(float x = 0f; x < worldHeight; x++) {
             //    Debug.Log( "firstLoop:"+x);
