@@ -68,13 +68,13 @@ public class table: MonoBehaviour {
     for (float x = 0f; x < worldHeight; x++) {
       //    Debug.Log( "firstLoop:"+x);
       for (float z = 0f; z < worldWidth; z++) {
-        // boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+       
         // Debug.Log("secodn Loop:" +z);
         if (count <= rackNumber) {
           GameObject block = Instantiate(block1, Vector3.zero, block1.transform.rotation) as GameObject;
           block.transform.parent = transform;
           block.transform.localPosition = new Vector3(z + z * gap, 0, x + x * gap);
-
+//  boxes.GetComponent<boxTable1>().CreateBox(cellJson);
           //                     float myFloat = count;
           // int myInt = Convert.ToInt32(myFloat);
 
