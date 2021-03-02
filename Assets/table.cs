@@ -16,7 +16,8 @@ public class table: MonoBehaviour {
   public float gap;
   private int rackNumber;
   private int count;
-  private string jsonD;
+  private string rackJson;
+  private string cellJson;
   List < string > rName = new List < string > ();
   //public GameObject box;
   //public float boxHeight;
@@ -25,20 +26,21 @@ public class table: MonoBehaviour {
   //public float gapWidth;
 
   void Start() {
-    jsonD = File.ReadAllText(Application.dataPath + "/json/rack.json");
+    rackJson = File.ReadAllText(Application.dataPath + "/json/rack.json");
+      cellJson = File.ReadAllText(Application.dataPath + "/json/cells.json");
     //CreateBox();
 
     // Debug.Log(rName);
 
-    CreateWorld(jsonD);
+    CreateWorld(rackJson,cellJson);
 
   }
 
-  void CreateWorld(string jsonD) {
+  void CreateWorld(string rackJson,string cellJson) {
 
     for (int i = 0; i >= 0; i++) {
       try {
-        PlayerInfo[] PInfo = JsonHelper.getJsonArray < PlayerInfo > (jsonD);
+        PlayerInfo[] PInfo = JsonHelper.getJsonArray < PlayerInfo > (rackJson);
         string s = PInfo[i].rack_name;
         rName.Add(s);
         rackNumber = i;
@@ -66,7 +68,7 @@ public class table: MonoBehaviour {
     for (float x = 0f; x < worldHeight; x++) {
       //    Debug.Log( "firstLoop:"+x);
       for (float z = 0f; z < worldWidth; z++) {
-        boxes.GetComponent<boxTable1>().CreateBox(jsonD);
+        boxes.GetComponent<boxTable1>().CreateBox(cellJson);
         // Debug.Log("secodn Loop:" +z);
         if (count <= rackNumber) {
           GameObject block = Instantiate(block1, Vector3.zero, block1.transform.rotation) as GameObject;
@@ -115,6 +117,7 @@ public class PlayerInfo {
   // public string rf_card_number;
   // public string destination;
   public string rack_name;
+    public string name;
 
 } [System.Serializable]
 public class JsonHelper {

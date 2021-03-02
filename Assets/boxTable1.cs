@@ -39,12 +39,12 @@ public class boxTable1 : MonoBehaviour
 
 
 
-    public void CreateBox(string jsonD)
+    public void CreateBox(string cellJson)
     {
 
 
 
-
+ PlayerInfo[] PInfo = JsonHelper.getJsonArray<PlayerInfo>(cellJson);
 
         for (float p = 1; p <= boxHeight; p++)
         {
@@ -52,6 +52,29 @@ public class boxTable1 : MonoBehaviour
 
             for (float q = 1; q <= boxWidth; q++)
             {
+
+
+
+                 for (int i = 0; i >= 0; i++)
+                {
+                   
+
+                    try{
+
+    string s = PInfo[i].name;
+    Debug.Log(s);
+
+                    }
+                
+                    catch (System.Exception excp)
+                    {
+
+//                        Debug.Log("sexy");
+                        break;
+                    }
+
+                }
+
 
 
                 GameObject laura;
