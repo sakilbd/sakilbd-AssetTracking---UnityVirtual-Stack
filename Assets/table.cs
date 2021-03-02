@@ -31,7 +31,17 @@ private int count;
         //CreateBox();
 
 
- rackNumber=0;
+
+
+// Debug.Log(rName);
+
+ 
+        CreateWorld(jsonD);
+
+    }
+
+    void CreateWorld (string jsonD) {
+ 
   for (int i = 0; i >= 0; i++)
           {
             try
@@ -51,19 +61,6 @@ private int count;
                         break;
                     }
           }
-// Debug.Log(rName);
- for (int q = 0; q <2;q++){
-
- 
- }
- 
-        CreateWorld(jsonD,rackNumber);
-
-    }
-
-    void CreateWorld (string jsonD,int rackNumber) {
- 
-
 //  var fib = new List<int>{0,1,2};
 // foreach( object elem in PInfo){
 //  string s = PInfo[elem].rack_name;
@@ -88,7 +85,7 @@ private int count;
 
 //                     float myFloat = count;
 // int myInt = Convert.ToInt32(myFloat);
-
+                     
                        rackNme.text= rName[count];
                     // string s = PInfo[i].rack_name;
         // rackNme.text= s;
