@@ -65,7 +65,7 @@ public class boxTable1 : MonoBehaviour
                 laura.transform.parent = transform;
                 laura.transform.localPosition = new Vector3((q + q * gapHeight), -(p + p * gapWidth), 0);
                 Debug.Log("p:"+p+"Q:"+q);
-                 Debug.Log("p:"+p+"Q:"+q);
+             
 
 
 

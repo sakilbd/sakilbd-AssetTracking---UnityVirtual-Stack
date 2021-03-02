@@ -11,7 +11,7 @@ using System.IO;
 
      public GameObject block1;
 
-      //  public GameObject boxes;
+       public GameObject boxes;
     private float worldHeight ;
      public float worldWidth;
      public float gap ;
@@ -25,7 +25,7 @@ private float count;
     //public float gapWidth;
 
     void  Start () {
-   jsonD = File.ReadAllText(Application.dataPath + "/data.json");
+   jsonD = File.ReadAllText(Application.dataPath + "/json/rack.json");
         //CreateBox();
         CreateWorld(jsonD);
 
