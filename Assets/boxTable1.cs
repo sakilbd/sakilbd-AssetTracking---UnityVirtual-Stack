@@ -32,14 +32,14 @@ public class boxTable1 : MonoBehaviour
 //dp.transform.localScale += new Vector3(0,0, .1f);
 
 
-        CreateBox();
+        // CreateBox();
     }
 
 
 
 
 
-    void CreateBox()
+    public void CreateBox(string jsonD)
     {
 
 
