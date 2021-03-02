@@ -13,7 +13,7 @@ public class boxTable1 : MonoBehaviour
     private string info;
     // public GameObject dp;
 
-
+  private string cellJson;
 
 
     private int score;
@@ -26,13 +26,13 @@ public class boxTable1 : MonoBehaviour
     void Start()
     {
 
-
+ cellJson = File.ReadAllText(Application.dataPath + "/json/cells.json");
 // box.transform.localScale += new Vector3(-.2f,0, 0);
 // box.transform.localPosition += new Vector3(2,0, 0);
 //dp.transform.localScale += new Vector3(0,0, .1f);
 
 
-        // CreateBox();
+        CreateBox(cellJson);
     }
 
 
@@ -60,22 +60,20 @@ public class boxTable1 : MonoBehaviour
                    
 
                     try{
-
+string pos = PInfo[i].position;
+string rfid = PInfo[i].rfid;
     string s = PInfo[i].name;
-    Debug.Log(s);
+     var results = pos.Split('_');
+                        string posA = results[0];
+                        string posB = results[1];
+    // Debug.Log(s);
+     Debug.Log(pos);
+        Debug.Log(rfid);
 
-                    }
-                
-                    catch (System.Exception excp)
-                    {
-
-//                        Debug.Log("sexy");
-                        break;
-                    }
-
-                }
-
-
+             
+if (p == float.Parse(posA) && q == float.Parse(posB))
+                        {
+                          
 
                 GameObject laura;
                 // Text t = dp.GetComponent<Text>();
@@ -91,6 +89,17 @@ public class boxTable1 : MonoBehaviour
              
 
 
+       }
+                    }
+                
+                    catch (System.Exception excp)
+                    {
+
+//                        Debug.Log("sexy");
+                        break;
+                    }
+
+                }
 
 
 

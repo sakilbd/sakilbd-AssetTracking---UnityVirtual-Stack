@@ -68,7 +68,7 @@ public class table: MonoBehaviour {
     for (float x = 0f; x < worldHeight; x++) {
       //    Debug.Log( "firstLoop:"+x);
       for (float z = 0f; z < worldWidth; z++) {
-        boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+        // boxes.GetComponent<boxTable1>().CreateBox(cellJson);
         // Debug.Log("secodn Loop:" +z);
         if (count <= rackNumber) {
           GameObject block = Instantiate(block1, Vector3.zero, block1.transform.rotation) as GameObject;
@@ -118,6 +118,8 @@ public class PlayerInfo {
   // public string destination;
   public string rack_name;
     public string name;
+    public string position;
+        public string rfid;
 
 } [System.Serializable]
 public class JsonHelper {
