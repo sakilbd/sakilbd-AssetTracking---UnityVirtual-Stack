@@ -805,7 +805,6 @@ MonoBehaviour:
   boxes: {fileID: 1474524533}
   worldWidth: 4
   gap: 5
-  rackNumber: 4
 --- !u!4 &404741527
 Transform:
   m_ObjectHideFlags: 0

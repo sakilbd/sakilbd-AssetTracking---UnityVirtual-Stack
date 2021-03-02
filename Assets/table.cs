@@ -16,8 +16,8 @@ using System.IO;
     private float worldHeight ;
      public float worldWidth;
      public float gap ;
-      public float rackNumber;
-private float count;
+      private int rackNumber;
+private int count;
   private string jsonD;
   List<string> rName = new List<string>();
     //public GameObject box;
@@ -30,7 +30,8 @@ private float count;
    jsonD = File.ReadAllText(Application.dataPath + "/json/rack.json");
         //CreateBox();
 
- rName.Add("sakil");
+
+ rackNumber=0;
   for (int i = 0; i >= 0; i++)
           {
             try
@@ -38,8 +39,8 @@ private float count;
         PlayerInfo[] PInfo = JsonHelper.getJsonArray<PlayerInfo>(jsonD);                                
         string s = PInfo[i].rack_name;
         rName.Add(s);
-       
-       
+       rackNumber = i;
+       Debug.Log(rackNumber);
         // Debug.Log(s);
 
                                         }
@@ -55,11 +56,12 @@ private float count;
 
  
  }
-        CreateWorld(jsonD);
+ 
+        CreateWorld(jsonD,rackNumber);
 
     }
 
-    void CreateWorld (string jsonD) {
+    void CreateWorld (string jsonD,int rackNumber) {
  
 
 //  var fib = new List<int>{0,1,2};
@@ -69,10 +71,10 @@ private float count;
 
 // }
 
-         count=0f;
-         worldHeight = rackNumber/2-1 ;
-
-        
+         count=1;
+         worldHeight = rackNumber/2 ;
+        rackNumber++;
+         rackNme.text= rName[0];
          for(float x = 0f; x < worldHeight; x++) {
             //    Debug.Log( "firstLoop:"+x);
             for (float z = 0f; z < worldWidth; z++) {
@@ -84,9 +86,10 @@ private float count;
                     block.transform.localPosition = new Vector3( z + z * gap ,0, x + x * gap);
 
 
-                    float myFloat = count;
-int myInt = Convert.ToInt32(myFloat);
-                       rackNme.text= rName[myInt];
+//                     float myFloat = count;
+// int myInt = Convert.ToInt32(myFloat);
+
+                       rackNme.text= rName[count];
                     // string s = PInfo[i].rack_name;
         // rackNme.text= s;
         // Debug.Log(s);
