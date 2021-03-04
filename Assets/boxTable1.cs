@@ -67,8 +67,8 @@ string rfid = PInfo[i].rfid;
                         string posA = results[0];
                         string posB = results[1];
     // Debug.Log(s);
-     Debug.Log(pos);
-        Debug.Log(rfid);
+    //  Debug.Log(pos);
+    //     Debug.Log(rfid);
 
              
 if (p == float.Parse(posA) && q == float.Parse(posB))
@@ -98,7 +98,7 @@ if (p == float.Parse(posA) && q == float.Parse(posB))
 //                        Debug.Log("sexy");
                         break;
                     }
-
+   
                 }
 
 

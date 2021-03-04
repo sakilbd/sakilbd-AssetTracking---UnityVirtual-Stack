@@ -19,6 +19,8 @@ public class table: MonoBehaviour {
   private string rackJson;
   private string cellJson;
   List < string > rName = new List < string > ();
+    List < string > cellList = new List < string > ();
+    List < string > rackList = new List < string > ();
   //public GameObject box;
   //public float boxHeight;
   //public float boxWidth;
@@ -44,7 +46,41 @@ public class table: MonoBehaviour {
         string s = PInfo[i].rack_name;
         rName.Add(s);
         rackNumber = i;
-        Debug.Log(rackNumber);
+        // Debug.Log(rackNumber);
+        // Debug.Log(s);
+
+      }
+      catch(System.Exception excp) {
+
+        //                        Debug.Log("sexy");
+        break;
+      }
+    }
+     for (int i = 0; i >=0 ;i++) {
+      try {
+        PlayerInfo[] PInfo = JsonHelper.getJsonArray < PlayerInfo > (cellJson);
+        string cell = PInfo[i].rack_id;
+        cellList.Add(cell);
+        int values =cellList.Count;
+       Debug.Log(values);
+      //  Debug.Log(cell);
+        //  Debug.Log(i);
+
+
+      }
+      catch(System.Exception excp) {
+
+        //                        Debug.Log("sexy");
+        break;
+      }
+    }
+    for (int i = 0; i >= 0; i++) {
+      try {
+        PlayerInfo[] PInfo = JsonHelper.getJsonArray < PlayerInfo > (rackJson);
+        string rack = PInfo[i].id;
+        rackList.Add(rack);
+      //  Debug.Log(rack);
+
         // Debug.Log(s);
 
       }
@@ -65,7 +101,12 @@ public class table: MonoBehaviour {
     worldHeight = rackNumber / 2;
     rackNumber++;
     rackNme.text = rName[0];
+
+    int cellCount = cellList.Count;
+    int rackCount = rackList.Count;
     for (float x = 0f; x < worldHeight; x++) {
+      //  boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+
       //    Debug.Log( "firstLoop:"+x);
       for (float z = 0f; z < worldWidth; z++) {
        
@@ -74,7 +115,6 @@ public class table: MonoBehaviour {
           GameObject block = Instantiate(block1, Vector3.zero, block1.transform.rotation) as GameObject;
           block.transform.parent = transform;
           block.transform.localPosition = new Vector3(z + z * gap, 0, x + x * gap);
-//  boxes.GetComponent<boxTable1>().CreateBox(cellJson);
           //                     float myFloat = count;
           // int myInt = Convert.ToInt32(myFloat);
 
@@ -85,6 +125,16 @@ public class table: MonoBehaviour {
 
           // Debug.Log(block);
           count++;
+        
+          int a =0;
+            if(rackList[(int)Math.Round(x)]==cellList[a]){
+              a++;
+                 boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+          
+           
+
+        }
+         
 
           //  Debug.Log("Inside IF Condition :" + z);
         }
@@ -120,6 +170,8 @@ public class PlayerInfo {
     public string name;
     public string position;
         public string rfid;
+        public string rack_id;
+        public string id;
 
 } [System.Serializable]
 public class JsonHelper {
