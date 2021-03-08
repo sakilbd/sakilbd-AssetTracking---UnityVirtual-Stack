@@ -75,16 +75,16 @@ if (p == float.Parse(posA) && q == float.Parse(posB))
                         {
                           
 
-                GameObject laura;
+                GameObject cellBox;
                 // Text t = dp.GetComponent<Text>();
 
                 // info = "" + p + q;
                 // t.text = info;
                 Vector3 Vec = new Vector3(1, 0, 0);
 
-                laura = Instantiate(box, Vec, box.transform.rotation) as GameObject;
-                laura.transform.parent = transform;
-                laura.transform.localPosition = new Vector3((q + q * gapHeight), -(p + p * gapWidth), 0);
+                cellBox = Instantiate(box, Vec, box.transform.rotation) as GameObject;
+                cellBox.transform.parent = transform;
+                cellBox.transform.localPosition = new Vector3((q + q * gapHeight), -(p + p * gapWidth), 0);
                 // Debug.Log("p:"+p+"Q:"+q);
              
 

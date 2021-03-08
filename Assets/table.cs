@@ -39,7 +39,7 @@ public class table: MonoBehaviour {
   }
 
   void CreateWorld(string rackJson,string cellJson) {
-
+  boxes.GetComponent<boxTable1>().CreateBox(cellJson);
     for (int i = 0; i >= 0; i++) {
       try {
         PlayerInfo[] PInfo = JsonHelper.getJsonArray < PlayerInfo > (rackJson);
@@ -129,7 +129,7 @@ public class table: MonoBehaviour {
           int a =0;
             if(rackList[(int)Math.Round(x)]==cellList[a]){
               a++;
-                 boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+               
           
            
 
