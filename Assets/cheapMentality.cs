@@ -35,7 +35,19 @@ public TMPro.TMP_Text rackNme;
   }
 
   void CreateWorld(string rackJson,string cellJson) {
-     boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+    int gunaGuni =0;
+    boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+      for (int i = 0; i <1 ; i=i+1) {
+     for (int j = 0; j <=1 ; j=j+1) {
+       gunaGuni++;
+       if(i==0){
+
+
+       }
+     }
+       
+     }
+
     for (int i = 0; i >= 0; i++) {
       try {
         PlayerInfo[] PInfo = JsonHelper.getJsonArray < PlayerInfo > (rackJson);
@@ -100,22 +112,24 @@ public TMPro.TMP_Text rackNme;
 
     int cellCount = cellList.Count;
     int rackCount = rackList.Count;
-    for (float x = 0f; x < worldHeight; x++) {
+    for (float x = 0f; x <2; x++) {
       //  boxes.GetComponent<boxTable1>().CreateBox(cellJson);
 
       //    Debug.Log( "firstLoop:"+x);
-      for (float z = 0f; z < worldWidth; z=z+2) {
+      for (float z = 0f; z <1; z++) {
         
 
         // Debug.Log("secodn Loop:" +z);
-        if (count <= rackNumber) {
-          
+        if (count < rackNumber) {
+        
+          if(x==1f&& z ==0){
+         
           GameObject block = Instantiate(block1, Vector3.zero, block1.transform.rotation) as GameObject;
           block.transform.parent = transform;
           block.transform.localPosition = new Vector3(z + z * gap, 0, x + x * gap);
           //                     float myFloat = count;
           // int myInt = Convert.ToInt32(myFloat);
-
+          }
           rackNme.text = rName[count];
           // string s = PInfo[i].rack_name;
           // rackNme.text= s;
