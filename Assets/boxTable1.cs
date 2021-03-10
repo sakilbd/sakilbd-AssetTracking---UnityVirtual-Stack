@@ -32,14 +32,14 @@ public class boxTable1 : MonoBehaviour
 //dp.transform.localScale += new Vector3(0,0, .1f);
 
 
-        CreateBox(cellJson);
+        // CreateBox(cellJson);
     }
 
 
 
 
 
-    public void CreateBox(string cellJson)
+    public void CreateBox(string cellJson,int rackID)
     {
 
 
@@ -61,8 +61,9 @@ public class boxTable1 : MonoBehaviour
 
                     try{
 string pos = PInfo[i].position;
-string rfid = PInfo[i].rfid;
-    string s = PInfo[i].name;
+string rackId = PInfo[i].rack_id;
+// string rfid = PInfo[i].rfid;
+//     string s = PInfo[i].name;
      var results = pos.Split('_');
                         string posA = results[0];
                         string posB = results[1];
@@ -70,7 +71,7 @@ string rfid = PInfo[i].rfid;
     //  Debug.Log(pos);
     //     Debug.Log(rfid);
 
-             
+    if(int.Parse(rackId)==rackID){        
 if (p == float.Parse(posA) && q == float.Parse(posB))
                         {
                           
@@ -90,6 +91,7 @@ if (p == float.Parse(posA) && q == float.Parse(posB))
 
 
        }
+    }
                     }
                 
                     catch (System.Exception excp)

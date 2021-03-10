@@ -36,7 +36,7 @@ public TMPro.TMP_Text rackNme;
 
   void CreateWorld(string rackJson,string cellJson) {
     int gunaGuni =0;
-    boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+   
       for (int i = 0; i <1 ; i=i+1) {
      for (int j = 0; j <=1 ; j=j+1) {
        gunaGuni++;
@@ -112,18 +112,18 @@ public TMPro.TMP_Text rackNme;
 
     int cellCount = cellList.Count;
     int rackCount = rackList.Count;
-    for (float x = 0f; x <2; x++) {
+    for (float x = 0f; x <worldWidth; x++) {
       //  boxes.GetComponent<boxTable1>().CreateBox(cellJson);
 
       //    Debug.Log( "firstLoop:"+x);
-      for (float z = 0f; z <1; z++) {
-        
+      for (float z = 0f; z <worldHeight; z++) {
+           
 
         // Debug.Log("secodn Loop:" +z);
         if (count < rackNumber) {
-        
+        int rackID=4;
           if(x==1f&& z ==0){
-         
+          boxes.GetComponent<boxTable1>().CreateBox(cellJson,rackID);
           GameObject block = Instantiate(block1, Vector3.zero, block1.transform.rotation) as GameObject;
           block.transform.parent = transform;
           block.transform.localPosition = new Vector3(z + z * gap, 0, x + x * gap);
