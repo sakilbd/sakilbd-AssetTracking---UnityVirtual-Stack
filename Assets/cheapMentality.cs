@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 
-[System.Serializable]
+
 public class cheapMentality : MonoBehaviour
 {
     
@@ -101,7 +101,7 @@ public TMPro.TMP_Text rackNme;
     int cellCount = cellList.Count;
     int rackCount = rackList.Count;
     for (float x = 0f; x < worldHeight; x++) {
-       boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+      //  boxes.GetComponent<boxTable1>().CreateBox(cellJson);
 
       //    Debug.Log( "firstLoop:"+x);
       for (float z = 0f; z < worldWidth; z=z+2) {

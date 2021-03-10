@@ -105,7 +105,7 @@ public class table: MonoBehaviour {
     int cellCount = cellList.Count;
     int rackCount = rackList.Count;
     for (float x = 0f; x < worldHeight; x++) {
-      //  boxes.GetComponent<boxTable1>().CreateBox(cellJson);
+       boxes.GetComponent<boxTable1>().CreateBox(cellJson);
 
       //    Debug.Log( "firstLoop:"+x);
       for (float z = 0f; z < worldWidth; z++) {
